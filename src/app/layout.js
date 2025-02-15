@@ -1,7 +1,7 @@
 // app/layout.js
-import { ClerkProvider } from "@clerk/nextjs";
-import "./globals.css"; // Import Tailwind CSS
 import { Roboto } from "next/font/google";
+import "./globals.css"; // Import Tailwind CSS
+import { ClerkProvider } from "@clerk/nextjs";
 
 const roboto = Roboto({
   weight: ["400", "700"],
