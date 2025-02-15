@@ -9,7 +9,7 @@ function Logo() {
       className="flex items-center space-x-2 text-red-600 font-bold text-lg"
     >
       <Image
-        src={"/Talanta.svg"}
+        src={"/talanta.svg"}
         alt="Talanta logo"
         width={100}
         height={100}
