@@ -15,7 +15,7 @@ export default function Header() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   return (
     <>
-      <header className="flex items-center justify-between bg-white shadow px-4 py-1 sticky top-0 z-50">
+      <header className="flex items-center justify-between bg-white shadow px-4 py-3 sticky top-0 z-50">
         {/* Left Section: Sidebar Toggle + Logo */}
         <div className="flex items-center space-x-4">
           {/* Sidebar Toggle Button (Only for Mobile) */}
