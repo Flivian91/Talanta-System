@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import { UserButton, useUser, SignInButton } from "@clerk/nextjs";
-import Link from "next/link";
 import { AiOutlineLike, AiFillLike, AiOutlineShareAlt } from "react-icons/ai";
 import { MdPlaylistAddCheck, MdPlaylistAdd } from "react-icons/md";
 
