@@ -4,7 +4,6 @@ import Link from "next/link";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { AiOutlineMenu } from "react-icons/ai";
 import { MdCloudUpload } from "react-icons/md";
-import Image from "next/image";
 import SearchInput from "./SearchInput";
 import Logo from "./Logo";
 import { useState } from "react";
@@ -50,7 +49,7 @@ export default function Header() {
             </SignedIn>
             <SignedOut>
               <Link
-                href="/auth"
+                href="/auth/signin"
                 className="block-inline px-4 py-2 rounded-full border  text-base font-bold tracking-wider border-surface "
               >
                 Sign In

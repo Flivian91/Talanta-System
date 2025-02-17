@@ -262,7 +262,7 @@ export default function Sidebar() {
           {!isSignedIn && (
             <li className={sidebarOpen ? "" : "flex justify-center"}>
               <Link
-                href="/auth?mode=signin"
+                href="/auth/signup"
                 data-tooltip-id="sidebar-tooltip"
                 data-tooltip-content={sidebarOpen ? "" : "Sign In"}
                 className={

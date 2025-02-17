@@ -1,5 +1,4 @@
 import Link from "next/link";
-import React from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { Tooltip } from "react-tooltip";
 import { links } from "./Sidebar";
