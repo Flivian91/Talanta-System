@@ -14,19 +14,18 @@ import MobileSidebar from "./MobileSidebar";
 export default function Header() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   return (
-    <>
-      <header className="flex items-center justify-between bg-white shadow px-4 py-3 sticky top-0 z-50">
+    <div>
+      <header className="flex items-center justify-between bg-white shadow px-4 py-3 sticky top-0 z-20">
         {/* Left Section: Sidebar Toggle + Logo */}
         <div className="flex items-center space-x-4">
           {/* Sidebar Toggle Button (Only for Mobile) */}
           <button
             onClick={() => setSidebarOpen(true)}
-            className="text-gray-700 hover:bg-gray-100 p-2 rounded md:hidden"
+            className="text-gray-700 hover:bg-gray-100 p-2 rounded md:hidden inline-block"
           >
             <AiOutlineMenu size={24} />
           </button>
 
-          {/* Ovelay and Mobile menu */}
           <Logo />
         </div>
         {/* Middle Section: Search Bar */}
@@ -38,7 +37,7 @@ export default function Header() {
           <nav className="hidden md:flex space-x-4">
             <Link
               href="/upload"
-              className="flex items-center  space-x-1 bg-secondary text-gray-200 hover:text-primary px-4 py-2  border rounded-full shadow"
+              className="flex items-center space-x-1 bg-secondary text-gray-200 hover:text-primary px-4 py-2  border rounded-full shadow"
             >
               <MdCloudUpload size={20} />
               <span>Upload</span>
@@ -60,8 +59,9 @@ export default function Header() {
           </div>
         </div>
       </header>
+      {/* Ovelay and Mobile menu */}
       {sidebarOpen && <MobileSidebar onClose={() => setSidebarOpen(false)} />}
       {sidebarOpen && <Overlay onClose={() => setSidebarOpen(false)} />}
-    </>
+    </div>
   );
 }
