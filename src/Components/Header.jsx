@@ -4,7 +4,6 @@ import Link from "next/link";
 import { SignedIn, SignedOut, UserButton, useUser } from "@clerk/nextjs";
 import { AiOutlineMenu } from "react-icons/ai";
 import { MdCloudUpload } from "react-icons/md";
-import SearchInput from "./buttons/SearchInputButton";
 import Logo from "./Logo";
 import { useState } from "react";
 import Overlay from "./Overlay";
@@ -12,9 +11,11 @@ import MobileSidebar from "./MobileSidebar";
 import DashboardButton from "./buttons/DashboardButton";
 import UploadButton from "./buttons/UploadButton";
 import SearchInputModel from "./models/SearchInputModel";
+import SearchInputButton from "./buttons/SearchInputButton";
 
 export default function Header() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isInputOpen, setIsInputOpen] = useState(false);
   const { isSignedIn, user } = useUser();
   const role = user?.publicMetadata?.role;
   return (
@@ -32,7 +33,7 @@ export default function Header() {
           <Logo />
         </div>
         {/* Middle Section: Search Bar */}
-        <SearchInput />
+        <SearchInputButton onClick={()=> setIsInputOpen(true)} />
 
         {/* Right Section: Navigation Links & Profile */}
         <div className="flex items-center space-x-6">
@@ -76,8 +77,10 @@ export default function Header() {
       {sidebarOpen && <MobileSidebar onClose={() => setSidebarOpen(false)} />}
       {sidebarOpen && <Overlay onClose={() => setSidebarOpen(false)} />}
       {/* Search Input Model */}
-      <SearchInputModel />
-      <Overlay/>
+      {isInputOpen && (
+        <SearchInputModel onClose={() => setIsInputOpen(false)} />
+      )}
+      {isInputOpen && <Overlay onClose={() => setIsInputOpen(false)} />}
     </div>
   );
 }
