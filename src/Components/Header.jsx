@@ -6,12 +6,13 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { MdCloudUpload } from "react-icons/md";
 import Logo from "./Logo";
 import { useState } from "react";
-import Overlay from "./Overlay";
+import Overlay from "./overlays/Overlay";
 import MobileSidebar from "./MobileSidebar";
 import DashboardButton from "./buttons/DashboardButton";
 import UploadButton from "./buttons/UploadButton";
 import SearchInputModel from "./models/SearchInputModel";
 import SearchInputButton from "./buttons/SearchInputButton";
+import SearchOverlay from "./overlays/SearchOverlay";
 
 export default function Header() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -80,7 +81,7 @@ export default function Header() {
       {isInputOpen && (
         <SearchInputModel onClose={() => setIsInputOpen(false)} />
       )}
-      {isInputOpen && <Overlay onClose={() => setIsInputOpen(false)} />}
+      {isInputOpen && <SearchOverlay onClose={() => setIsInputOpen(false)} />}
     </div>
   );
 }
