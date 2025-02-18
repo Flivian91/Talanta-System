@@ -1,24 +1,17 @@
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
+import { NextResponse } from "next/server";
 
 // Define protected routes
 const isAdminRoute = createRouteMatcher(["/admin(.*)"]);
-const isUploadRoute = createRouteMatcher(["/upload(.*)"]);
 
 export default clerkMiddleware(async (auth, req) => {
   // Restrict /admin to users with admin permissions
-  if (isAdminRoute(req)) {
-    await auth.protect((has) => {
-      console.log(has({ permission: "org:talent:upload" }));
-      
-      return has({ permission: "admin" });
-    });
-  }
-
-  // Restrict /upload to talent users only
-  if (isUploadRoute(req)) {
-    await auth.protect((has) => {
-      return has({ permission: "org:talent:upload" });
-    });
+  if (
+    isAdminRoute(req) &&
+    (await (await auth()).sessionClaims?.metadata?.role) !== "admin"
+  ) {
+    const url = new URL("/", req.url);
+    return NextResponse.redirect(url);
   }
 });
 

@@ -13,7 +13,7 @@ function Logo() {
         alt="Talanta logo"
         width={100}
         height={100}
-        className="md:-mt-2 -ml-4"
+        className="md:-mt-2 -ml-4 transform scale-90 md:scale-100"
       />
     </Link>
   );
