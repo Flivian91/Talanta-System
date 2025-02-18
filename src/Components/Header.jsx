@@ -77,6 +77,7 @@ export default function Header() {
       {sidebarOpen && <Overlay onClose={() => setSidebarOpen(false)} />}
       {/* Search Input Model */}
       <SearchInputModel />
+      <Overlay/>
     </div>
   );
 }
