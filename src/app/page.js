@@ -1,7 +1,7 @@
 // src/app/page.js
 import Header from "@/Components/Header";
 import Sidebar from "@/Components/Sidebar";
-import VideoGrid from "@/Components/VideoGrid";
+import VideoGrid from "@/Components/layouts/VideoGrid";
 
 export default function HomePage() {
   return (

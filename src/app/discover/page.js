@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import VideoCard from "@/Components/VideoCard"; // or TalentCard if you prefer
+import VideoCard from "@/Components/cards/VideoCard"; // or TalentCard if you prefer
 
 export default function DiscoverPage() {
   // Dummy categories

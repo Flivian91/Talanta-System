@@ -1,6 +1,6 @@
 // src/Components/VideoGrid.jsx
-import Categories from "./Categories";
-import VideoCard from "./VideoCard";
+import Categories from "../Categories";
+import VideoCard from "../cards/VideoCard";
 
 export default function VideoGrid() {
   // Dummy video data (replace with API call later)
@@ -30,7 +30,8 @@ export default function VideoGrid() {
     {
       id: 3,
       title: "Cooking with Love",
-      thumbnail: "https://media.istockphoto.com/id/1560609530/photo/indian-girl-preparing-food-magnificent-young-woman-preparing-delicious-home-cooked.jpg?s=612x612&w=0&k=20&c=HopfqmGV4CFzH8GkzDUu_hyF37pRuba-K-AVx1bLFKM=",
+      thumbnail:
+        "https://media.istockphoto.com/id/1560609530/photo/indian-girl-preparing-food-magnificent-young-woman-preparing-delicious-home-cooked.jpg?s=612x612&w=0&k=20&c=HopfqmGV4CFzH8GkzDUu_hyF37pRuba-K-AVx1bLFKM=",
       hoverThumbnail:
         "https://media.istockphoto.com/id/1560609530/photo/indian-girl-preparing-food-magnificent-young-woman-preparing-delicious-home-cooked.jpg?s=612x612&w=0&k=20&c=HopfqmGV4CFzH8GkzDUu_hyF37pRuba-K-AVx1bLFKM=",
       channel: "Chef's Special",
@@ -40,7 +41,8 @@ export default function VideoGrid() {
     {
       id: 4,
       title: "Travel Vlog: Japan",
-      thumbnail: "https://media.istockphoto.com/id/1004186904/photo/the-african-man-basketball-player-jumping-with-ball.jpg?s=612x612&w=0&k=20&c=QW_fdTSTDC1DZXbTkhrhWqLsnpcoq_yoV6ECUMBtkiw=",
+      thumbnail:
+        "https://media.istockphoto.com/id/1004186904/photo/the-african-man-basketball-player-jumping-with-ball.jpg?s=612x612&w=0&k=20&c=QW_fdTSTDC1DZXbTkhrhWqLsnpcoq_yoV6ECUMBtkiw=",
       hoverThumbnail:
         "https://media.istockphoto.com/id/1004186904/photo/the-african-man-basketball-player-jumping-with-ball.jpg?s=612x612&w=0&k=20&c=QW_fdTSTDC1DZXbTkhrhWqLsnpcoq_yoV6ECUMBtkiw=",
       channel: "Wanderlust",
@@ -50,7 +52,8 @@ export default function VideoGrid() {
     {
       id: 5,
       title: "Cooking with Love",
-      thumbnail: "https://media.istockphoto.com/id/1560609530/photo/indian-girl-preparing-food-magnificent-young-woman-preparing-delicious-home-cooked.jpg?s=612x612&w=0&k=20&c=HopfqmGV4CFzH8GkzDUu_hyF37pRuba-K-AVx1bLFKM=",
+      thumbnail:
+        "https://media.istockphoto.com/id/1560609530/photo/indian-girl-preparing-food-magnificent-young-woman-preparing-delicious-home-cooked.jpg?s=612x612&w=0&k=20&c=HopfqmGV4CFzH8GkzDUu_hyF37pRuba-K-AVx1bLFKM=",
       hoverThumbnail:
         "https://media.istockphoto.com/id/1560609530/photo/indian-girl-preparing-food-magnificent-young-woman-preparing-delicious-home-cooked.jpg?s=612x612&w=0&k=20&c=HopfqmGV4CFzH8GkzDUu_hyF37pRuba-K-AVx1bLFKM=",
       channel: "Chef's Special",
@@ -60,7 +63,8 @@ export default function VideoGrid() {
     {
       id: 6,
       title: "Travel Vlog: Japan",
-      thumbnail: "https://media.istockphoto.com/id/1004186904/photo/the-african-man-basketball-player-jumping-with-ball.jpg?s=612x612&w=0&k=20&c=QW_fdTSTDC1DZXbTkhrhWqLsnpcoq_yoV6ECUMBtkiw=",
+      thumbnail:
+        "https://media.istockphoto.com/id/1004186904/photo/the-african-man-basketball-player-jumping-with-ball.jpg?s=612x612&w=0&k=20&c=QW_fdTSTDC1DZXbTkhrhWqLsnpcoq_yoV6ECUMBtkiw=",
       hoverThumbnail:
         "https://media.istockphoto.com/id/1004186904/photo/the-african-man-basketball-player-jumping-with-ball.jpg?s=612x612&w=0&k=20&c=QW_fdTSTDC1DZXbTkhrhWqLsnpcoq_yoV6ECUMBtkiw=",
       channel: "Wanderlust",

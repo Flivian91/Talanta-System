@@ -7,7 +7,7 @@ function SearchResultsCard({data}) {
   return (
     <Link
       href={"/watch/1"}
-      className="flex items-center gap-3 px-6 py-2 hover:bg-gray-100"
+      className="flex items-center gap-3 px-6 py-4 hover:bg-gray-100"
     >
       {/* Image */}
       <Image

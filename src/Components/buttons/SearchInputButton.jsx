@@ -1,14 +1,17 @@
 import { AiOutlineSearch } from "react-icons/ai";
 function SearchInputButton({ onClick }) {
   return (
-    <div
-      onClick={onClick}
-      className="flex-1 flex justify-end md:justify-center"
-    >
-      <button className="text-gray-500 md:hidden inline-block">
+    <div className="flex-1 flex justify-end md:justify-center">
+      <button
+        onClick={onClick}
+        className="text-gray-500 md:hidden inline-block"
+      >
         <AiOutlineSearch size={20} />
       </button>
-      <div className=" hidden md:flex items-center gap-6 px-4 py-2 shadow border border-gray-3500 rounded text-gray-500 cursor-pointer">
+      <div
+        onClick={onClick}
+        className=" hidden md:flex items-center gap-6 px-4 py-2 shadow border border-gray-3500 rounded text-gray-500 cursor-pointer"
+      >
         <button className="">
           <AiOutlineSearch size={20} />
         </button>

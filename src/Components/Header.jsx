@@ -34,12 +34,12 @@ export default function Header() {
           <Logo />
         </div>
         {/* Middle Section: Search Bar */}
-        <SearchInputButton onClick={()=> setIsInputOpen(true)} />
+        <SearchInputButton onClick={() => setIsInputOpen(true)} />
 
         {/* Right Section: Navigation Links & Profile */}
         <div className="flex items-center space-x-6">
           {/* Navigation Links (Hidden on Mobile) */}
-          {isSignedIn ? (
+          {isSignedIn && (
             <nav className="hidden md:flex space-x-4">
               {role === "admin" ? (
                 <DashboardButton link="admin" />
@@ -49,14 +49,6 @@ export default function Header() {
                 <UploadButton />
               )}
             </nav>
-          ) : (
-            <Link
-              href="/upload"
-              className="flex items-center space-x-1 bg-secondary text-gray-200 hover:text-primary px-4 py-2  border rounded-full shadow"
-            >
-              <MdCloudUpload size={20} />
-              <span>Upload</span>
-            </Link>
           )}
           {/* User Profile (Clerk User Button) */}
           <div>
@@ -66,7 +58,7 @@ export default function Header() {
             <SignedOut>
               <Link
                 href="/auth/signin"
-                className="block-inline px-4 py-2 rounded-full border  text-base font-bold tracking-wider border-surface "
+                className="block-inline ml-2 px-4 py-2 rounded-full border  text-base font-bold tracking-wider border-surface "
               >
                 Sign In
               </Link>

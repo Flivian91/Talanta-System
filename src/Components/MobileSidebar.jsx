@@ -1,10 +1,14 @@
+"use client";
 import Link from "next/link";
-import { AiOutlineClose } from "react-icons/ai";
+import { AiOutlineClose, AiOutlineUser } from "react-icons/ai";
 import { Tooltip } from "react-tooltip";
-import { links } from "./Sidebar";
+import { authnticatedLinks, links } from "./Sidebar";
 import Image from "next/image";
+import { useUser } from "@clerk/nextjs";
+import { MdSubscriptions } from "react-icons/md";
 
 function MobileSidebar({ onClose }) {
+  const { isSignedIn } = useUser();
   return (
     <div className="fixed top-0  z-50 w-64 min-h-screen bg-primary md:hidden">
       <div className="flex flex-col gap-0 ">
@@ -22,7 +26,6 @@ function MobileSidebar({ onClose }) {
               height={50}
             />
           </Link>
-          {/* close button from react-icons */}
           <button
             onClick={onClose}
             className="text-gray-700 hover:bg-gray-200 p-2 rounded md:hidden"
@@ -45,6 +48,23 @@ function MobileSidebar({ onClose }) {
                 </li>
               );
             })}
+            {isSignedIn && (
+              <>
+                {authnticatedLinks.map((link) => {
+                  return (
+                    <li key={link.name}>
+                      <Link
+                        href={link.href}
+                        className="flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded"
+                      >
+                        {link.icon}
+                        <span className="ml-2">{link.name}</span>
+                      </Link>
+                    </li>
+                  );
+                })}
+              </>
+            )}
           </ul>
         </nav>
         <Tooltip

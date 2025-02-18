@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import VideoCard from "@/Components/VideoCard"; // or TalentCard
+import VideoCard from "@/Components/cards/VideoCard"; // or TalentCard
 import { useState } from "react";
 
 /**
@@ -44,7 +44,8 @@ export default function SubscriptionsPage() {
       title: "Latest Vocal Showcase",
       channel: "Music Maestro",
       thumbnail: "https://via.placeholder.com/320x180?text=Music+Video",
-      hoverThumbnail: "https://via.placeholder.com/320x180/000000/ffffff?text=Playing...",
+      hoverThumbnail:
+        "https://via.placeholder.com/320x180/000000/ffffff?text=Playing...",
       views: "45K views",
       published: "2 days ago",
       channelId: 1,
@@ -54,7 +55,8 @@ export default function SubscriptionsPage() {
       title: "Hip Hop Basics",
       channel: "Dance Academy",
       thumbnail: "https://via.placeholder.com/320x180?text=Dance+Video",
-      hoverThumbnail: "https://via.placeholder.com/320x180/000000/ffffff?text=Playing...",
+      hoverThumbnail:
+        "https://via.placeholder.com/320x180/000000/ffffff?text=Playing...",
       views: "80K views",
       published: "5 days ago",
       channelId: 2,
@@ -64,7 +66,8 @@ export default function SubscriptionsPage() {
       title: "Stand-Up Comedy Night",
       channel: "Comedy Club",
       thumbnail: "https://via.placeholder.com/320x180?text=Comedy+Video",
-      hoverThumbnail: "https://via.placeholder.com/320x180/000000/ffffff?text=Playing...",
+      hoverThumbnail:
+        "https://via.placeholder.com/320x180/000000/ffffff?text=Playing...",
       views: "120K views",
       published: "1 week ago",
       channelId: 3,
@@ -74,7 +77,8 @@ export default function SubscriptionsPage() {
       title: "Freestyle Football Tricks",
       channel: "Sports TV",
       thumbnail: "https://via.placeholder.com/320x180?text=Sports+Video",
-      hoverThumbnail: "https://via.placeholder.com/320x180/000000/ffffff?text=Playing...",
+      hoverThumbnail:
+        "https://via.placeholder.com/320x180/000000/ffffff?text=Playing...",
       views: "200K views",
       published: "3 days ago",
       channelId: 4,
@@ -132,7 +136,8 @@ export default function SubscriptionsPage() {
         transition={{ duration: 0.4 }}
       >
         <h2 className="text-xl font-semibold">
-          Recent Videos from <span className="text-red-600">{selectedChannel.name}</span>
+          Recent Videos from{" "}
+          <span className="text-red-600">{selectedChannel.name}</span>
         </h2>
       </motion.div>
 
