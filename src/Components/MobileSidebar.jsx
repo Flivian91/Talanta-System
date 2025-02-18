@@ -4,11 +4,13 @@ import { AiOutlineClose, AiOutlineUser } from "react-icons/ai";
 import { Tooltip } from "react-tooltip";
 import { authnticatedLinks, links } from "./Sidebar";
 import Image from "next/image";
-import { useUser } from "@clerk/nextjs";
+import { SignOutButton, useUser } from "@clerk/nextjs";
 import { MdSubscriptions } from "react-icons/md";
+import DashboardButton from "./buttons/DashboardButton";
 
 function MobileSidebar({ onClose }) {
-  const { isSignedIn } = useUser();
+  const { isSignedIn, user } = useUser();
+  const role = user?.publicMetadata?.role;
   return (
     <div className="fixed top-0  z-50 w-64 min-h-screen bg-primary md:hidden">
       <div className="flex flex-col gap-0 ">
@@ -67,6 +69,22 @@ function MobileSidebar({ onClose }) {
             )}
           </ul>
         </nav>
+        <div className="flex flex-col gap-2 items-start px-4 py-2">
+          {isSignedIn &&
+            (role === "admin" ? (
+              <DashboardButton link="admin" />
+            ) : role === "sponser" ? (
+              <DashboardButton link="sponser" />
+            ) : (
+              <UploadButton />
+            ))}
+            <SignOutButton>
+              <button className="flex items-center justify-center p-2  text-gray-700 hover:bg-gray-200 rounded">
+                <AiOutlineUser />
+                <span className="ml-2">Sign Out</span>
+              </button>
+            </SignOutButton>
+        </div>
         <Tooltip
           id="sidebar-tooltip"
           place="right"

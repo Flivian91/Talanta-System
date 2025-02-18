@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { SignedIn, SignedOut, UserButton, useUser } from "@clerk/nextjs";
 import { AiOutlineMenu } from "react-icons/ai";
-import { MdCloudUpload } from "react-icons/md";
 import Logo from "./Logo";
 import { useState } from "react";
 import Overlay from "./overlays/Overlay";

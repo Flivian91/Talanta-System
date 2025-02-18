@@ -20,6 +20,7 @@ import { GoSidebarExpand } from "react-icons/go";
 import { GoSidebarCollapse } from "react-icons/go";
 import { Tooltip } from "react-tooltip";
 import { useUser } from "@clerk/nextjs";
+import DashboardButton from "./buttons/DashboardButton";
 export const links = [
   { name: "Home", href: "/", icon: <AiFillHome size={24} /> },
   { name: "Trending", href: "/trending", icon: <AiOutlineFire size={24} /> },
@@ -65,12 +66,13 @@ export const authnticatedLinks = [
 ];
 export default function Sidebar() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
-  const { isSignedIn } = useUser();
+  const { isSignedIn, user } = useUser();
+  const role = user?.publicMetadata?.role;
 
   return (
     <aside
       className={`bg-gray-50 border-r transition-all duration-300 hidden md:block  ${
-        sidebarOpen ? "w-64 lex items-center justify-center" : "w-20"
+        sidebarOpen ? "w-64 flex items-center justify-center" : "w-20"
       }`}
     >
       <div className="flex items-center justify-between p-4 border-b">
@@ -90,7 +92,7 @@ export default function Sidebar() {
           />
         </button>
       </div>
-      <nav className="p-2">
+      <nav className="flex-grow p-2">
         <ul className="space-y-2">
           {links.map((link) => (
             <li
@@ -142,6 +144,7 @@ export default function Sidebar() {
           )}
         </ul>
       </nav>
+      
       <Tooltip
         id="sidebar-tooltip"
         place="right"
