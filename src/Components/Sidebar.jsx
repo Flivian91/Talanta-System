@@ -20,65 +20,66 @@ import { GoSidebarExpand } from "react-icons/go";
 import { GoSidebarCollapse } from "react-icons/go";
 import { Tooltip } from "react-tooltip";
 import { useUser } from "@clerk/nextjs";
-import DashboardButton from "./buttons/DashboardButton";
 export const links = [
   { name: "Home", href: "/", icon: <AiFillHome size={24} /> },
-  { name: "Trending", href: "/trending", icon: <AiOutlineFire size={24} /> },
-  { name: "Discover", href: "/discover", icon: <MdExplore size={24} /> },
+  {
+    name: "Trending",
+    href: "/you/trending",
+    icon: <AiOutlineFire size={24} />,
+  },
+  { name: "Discover", href: "/you/discover", icon: <MdExplore size={24} /> },
 ];
 export const authnticatedLinks = [
   {
     name: "Subscriptions",
-    href: "/subscriptions",
+    href: "/you/subscriptions",
     icon: <MdSubscriptions size={24} />,
   },
-  { name: "Me", href: "/profile", icon: <AiOutlineUser size={24} /> },
+  { name: "Me", href: "/you/profile", icon: <AiOutlineUser size={24} /> },
   {
     name: "Saved Videos",
-    href: "/saved",
+    href: "/you/saved",
     icon: <MdPlaylistAddCheck size={24} />,
   },
   {
     name: "Messages",
-    href: "/messages",
+    href: "/you/messages",
     icon: <AiOutlineMessage size={24} />,
   },
   {
     name: "Upload Talent",
-    href: "/upload",
+    href: "/you/upload",
     icon: <AiOutlineCloudUpload size={24} />,
   },
   {
     name: "Sponsorship Requests",
-    href: "/sponsorships",
+    href: "/you/sponsorships",
     icon: <MdAttachMoney size={24} />,
   },
   {
     name: "Notifications",
-    href: "/notifications",
+    href: "/you/notifications",
     icon: <MdNotifications size={24} />,
   },
   {
     name: "Settings",
-    href: "/settings",
+    href: "/you/settings",
     icon: <AiOutlineSetting size={24} />,
   },
 ];
-export default function Sidebar() {
-  const [sidebarOpen, setSidebarOpen] = useState(true);
-  const { isSignedIn, user } = useUser();
-  const role = user?.publicMetadata?.role;
+export default function Sidebar({ toogleSidebar, sidebarOpen }) {
+  const { isSignedIn } = useUser();
 
   return (
     <aside
-      className={`bg-gray-50 border-r transition-all duration-300 hidden md:block  ${
+      className={`bg-gray-50 border-r transition-all duration-300 hidden md:block fixed top-16 left-0 z-30 h-full mt-1  ${
         sidebarOpen ? "w-64 flex items-center justify-center" : "w-20"
       }`}
     >
       <div className="flex items-center justify-between p-4 border-b">
         {sidebarOpen && <h2 className="text-lg font-bold">Talanta</h2>}
         <button
-          onClick={() => setSidebarOpen(!sidebarOpen)}
+          onClick={toogleSidebar}
           className="text-gray-900 text-center text-xl hover:text-gray-600 p-2 hover:bg-gray-200 rounded"
           data-tooltip-id="sidebar-button"
           data-tooltip-content={sidebarOpen ? "Close Sidebar" : "Open Sidebar"}
@@ -144,7 +145,7 @@ export default function Sidebar() {
           )}
         </ul>
       </nav>
-      
+
       <Tooltip
         id="sidebar-tooltip"
         place="right"

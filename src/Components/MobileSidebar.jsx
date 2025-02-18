@@ -5,7 +5,6 @@ import { Tooltip } from "react-tooltip";
 import { authnticatedLinks, links } from "./Sidebar";
 import Image from "next/image";
 import { SignOutButton, useUser } from "@clerk/nextjs";
-import { MdSubscriptions } from "react-icons/md";
 import DashboardButton from "./buttons/DashboardButton";
 
 function MobileSidebar({ onClose }) {
