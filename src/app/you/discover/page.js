@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import VideoCard from "@/Components/cards/VideoCard"; // or TalentCard if you prefer
+import CartegorySection from "@/Components/sections/CartegorySection";
 
 export default function DiscoverPage() {
   // Dummy categories
@@ -89,36 +90,11 @@ export default function DiscoverPage() {
       <h1 className="text-3xl font-bold mb-6">Discover Talents</h1>
 
       {/* Category Selection */}
-      <div className="flex flex-wrap gap-2 mb-6">
-        {/* "All" Category */}
-        <button
-          onClick={() => setSelectedCategory("All")}
-          className={`px-4 py-2 rounded-full border transition
-            ${
-              selectedCategory === "All"
-                ? "bg-red-600 text-white"
-                : "bg-white text-gray-700 border-gray-300 hover:bg-gray-200"
-            }`}
-        >
-          All
-        </button>
-
-        {/* Individual Categories */}
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setSelectedCategory(cat)}
-            className={`px-4 py-2 rounded-full border transition
-              ${
-                selectedCategory === cat
-                  ? "bg-red-600 text-white"
-                  : "bg-white text-gray-700 border-gray-300 hover:bg-gray-200"
-              }`}
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
+      <CartegorySection
+        selectedCategory={selectedCategory}
+        categories={categories}
+        onSelectCategory={setSelectedCategory}
+      />
 
       {/* Grid of Talents */}
       {filteredTalents.length > 0 ? (

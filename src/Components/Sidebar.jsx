@@ -72,7 +72,7 @@ export default function Sidebar({ toogleSidebar, sidebarOpen }) {
 
   return (
     <aside
-      className={`bg-gray-50 border-r transition-all duration-300 hidden md:block fixed top-16 left-0 z-30 h-full mt-1  ${
+      className={`bg-gray-50 border-r transition-all duration-300 hidden md:block fixed top-16 left-0 z-20 h-full mt-1  ${
         sidebarOpen ? "w-64 flex items-center justify-center" : "w-20"
       }`}
     >

@@ -98,12 +98,12 @@ export default function VideoGrid() {
 
   return (
     <div className="px-4  flex flex-col gap-4">
-      <div className="flex items-center justify-start gap-4 py-2 ">
+      <div className="flex items-center justify-start gap-2 md:gap-4 py-2 ">
         {categories.map((category) => (
           <Categories key={category} text={category} />
         ))}
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 gap-y-10">
         {videos.map((video) => (
           <VideoCard key={video.id} video={video} />
         ))}

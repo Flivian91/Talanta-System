@@ -12,7 +12,11 @@ function HomeLayoutGrid() {
           toogleSidebar={() => setSidebarOpen(!sidebarOpen)}
           sidebarOpen={sidebarOpen}
         />
-        <main className={`min-h-min mt-18 ${sidebarOpen ? " ml-64 " : " ml-20 "}`}>
+        <main
+          className={`min-h-min  mt-20 ${
+            sidebarOpen ? "ml-0 md:ml-64" : "ml-0 md:ml-20 "
+          }`}
+        >
           <VideoGrid />
         </main>
       </div>

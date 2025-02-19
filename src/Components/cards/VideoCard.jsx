@@ -1,5 +1,6 @@
 // src/Components/VideoCard.jsx
-"use client"
+"use client";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -7,14 +8,14 @@ export default function VideoCard({ video }) {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <Link href={`/watch/${video.id}`} className="block">
+    <section className="block">
       <div
         className="bg-white rounded shadow overflow-hidden transform transition duration-300 hover:scale-105"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
         {/* Video Thumbnail */}
-        <div className="relative">
+        <Link href={`/watch/${video.id}`} className="relative">
           <img
             src={hovered ? video.hoverThumbnail : video.thumbnail}
             alt={video.title}
@@ -39,15 +40,39 @@ export default function VideoCard({ video }) {
               </svg>
             </div>
           )}
-        </div>
+        </Link>
 
         {/* Video Details */}
-        <div className="p-3">
-          <h3 className="text-lg font-semibold text-gray-900">{video.title}</h3>
-          <p className="text-sm text-gray-600">{video.channel}</p>
-          <p className="text-xs text-gray-500">{video.views} • {video.published}</p>
+        <div className="p-3 flex flex-col gap-2">
+          <Link
+            href={`/watch/${video.id}`}
+            className="text-lg font-semibold text-gray-900"
+          >
+            {video.title}
+          </Link>
+          <div className="flex items-center gap-2 w-full">
+            <Link href={"/"}>
+              <Image
+                src={"/profile.webp"}
+                width={100}
+                height={100}
+                alt="Profile image"
+                className="h-8 w-8 rounded-full"
+              />
+            </Link>
+            <div className="flex items-center justify-between gap-2">
+              <Link href={`/${video.channel}`} className="text-xs font-medium tracking-wide uppercase">
+                {video.channel}
+              </Link>
+              <p className="text-xs text-gray-500">
+                {video.views} • {video.published}
+              </p>
+            </div>
+          </div>
+          {/* <p className="text-sm text-gray-600">{video.channel}</p>
+          <p className="text-xs text-gray-500">{video.views} • {video.published}</p> */}
         </div>
       </div>
-    </Link>
+    </section>
   );
 }

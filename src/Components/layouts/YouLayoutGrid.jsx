@@ -13,7 +13,7 @@ function YouLayoutGrid({ children }) {
         />
       </div>
       <main
-        className={`min-h-min mt-16 ${sidebarOpen ? " ml-64 " : " ml-20 "}`}
+        className={`min-h-min mt-16 ${sidebarOpen ? " ml-0 md:ml-64" : "ml-0 md:ml-20"}`}
       >
         {children}
       </main>
