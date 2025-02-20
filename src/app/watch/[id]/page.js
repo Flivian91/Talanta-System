@@ -68,8 +68,8 @@ export default function WatchPage() {
     <div className="min-h-screen bg-gray-100">
       <div className="container mx-auto p-6 max-w-6xl">
         {/* Video Player */}
-        <div className="bg-black rounded-lg overflow-hidden">
-          <video controls className="w-full h-[60vh] rounded-lg">
+        <div className="bg-black rounded overflow-hidden">
+          <video controls className="w-full h-[70vh] rounded-lg">
             <source src={video.videoUrl} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
