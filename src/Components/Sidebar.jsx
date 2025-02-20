@@ -41,21 +41,21 @@ export const authnticatedLinks = [
     href: "/you/saved",
     icon: <MdPlaylistAddCheck size={24} />,
   },
-  {
-    name: "Messages",
-    href: "/you/messages",
-    icon: <AiOutlineMessage size={24} />,
-  },
+  // {
+  //   name: "Messages",
+  //   href: "/you/messages",
+  //   icon: <AiOutlineMessage size={24} />,
+  // },
   {
     name: "Upload Talent",
     href: "/you/upload",
     icon: <AiOutlineCloudUpload size={24} />,
   },
-  {
-    name: "Sponsorship Requests",
-    href: "/you/sponsorships",
-    icon: <MdAttachMoney size={24} />,
-  },
+  // {
+  //   name: "Sponsorship Requests",
+  //   href: "/you/sponsorships",
+  //   icon: <MdAttachMoney size={24} />,
+  // },
   {
     name: "Notifications",
     href: "/you/notifications",

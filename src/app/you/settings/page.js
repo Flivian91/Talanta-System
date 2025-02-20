@@ -20,20 +20,8 @@ export default function SettingsPage() {
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Header */}
-      <header className="bg-white shadow p-4 flex items-center justify-between sticky top-0 z-50">
+      <header className="bg-white p-4 flex items-center justify-between">
         <h1 className="text-2xl font-bold text-gray-800">Settings</h1>
-        <UserButton
-          appearance={{
-            elements: {
-              userButtonTrigger:
-                "rounded-full bg-gray-200 hover:bg-gray-300 p-1",
-              userButtonDropdown:
-                "bg-white shadow-lg rounded-lg p-4",
-              userButtonDropdownItem:
-                "hover:bg-gray-100 text-gray-800",
-            },
-          }}
-        />
       </header>
 
       {/* Settings Form */}
@@ -49,9 +37,7 @@ export default function SettingsPage() {
           <div className="space-y-6">
             {/* Dark Mode Toggle */}
             <div className="flex items-center justify-between">
-              <label className="text-gray-700 font-medium">
-                Dark Mode
-              </label>
+              <label className="text-gray-700 font-medium">Dark Mode</label>
               <button
                 onClick={() => setDarkMode(!darkMode)}
                 className={`w-12 h-6 flex items-center rounded-full p-1 transition-colors ${
@@ -72,20 +58,14 @@ export default function SettingsPage() {
                 Email Notifications
               </label>
               <button
-                onClick={() =>
-                  setEmailNotifications(!emailNotifications)
-                }
+                onClick={() => setEmailNotifications(!emailNotifications)}
                 className={`w-12 h-6 flex items-center rounded-full p-1 transition-colors ${
-                  emailNotifications
-                    ? "bg-green-500"
-                    : "bg-gray-300"
+                  emailNotifications ? "bg-green-500" : "bg-gray-300"
                 }`}
               >
                 <div
                   className={`bg-white w-4 h-4 rounded-full shadow-md transform transition-transform ${
-                    emailNotifications
-                      ? "translate-x-6"
-                      : "translate-x-0"
+                    emailNotifications ? "translate-x-6" : "translate-x-0"
                   }`}
                 />
               </button>
@@ -97,20 +77,14 @@ export default function SettingsPage() {
                 Push Notifications
               </label>
               <button
-                onClick={() =>
-                  setPushNotifications(!pushNotifications)
-                }
+                onClick={() => setPushNotifications(!pushNotifications)}
                 className={`w-12 h-6 flex items-center rounded-full p-1 transition-colors ${
-                  pushNotifications
-                    ? "bg-green-500"
-                    : "bg-gray-300"
+                  pushNotifications ? "bg-green-500" : "bg-gray-300"
                 }`}
               >
                 <div
                   className={`bg-white w-4 h-4 rounded-full shadow-md transform transition-transform ${
-                    pushNotifications
-                      ? "translate-x-6"
-                      : "translate-x-0"
+                    pushNotifications ? "translate-x-6" : "translate-x-0"
                   }`}
                 />
               </button>
@@ -118,9 +92,7 @@ export default function SettingsPage() {
 
             {/* Language Selector */}
             <div className="flex items-center justify-between">
-              <label className="text-gray-700 font-medium">
-                Language
-              </label>
+              <label className="text-gray-700 font-medium">Language</label>
               <select
                 value={language}
                 onChange={(e) => setLanguage(e.target.value)}
