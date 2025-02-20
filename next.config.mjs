@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   experimental: {
-    optimizeCss: true, // ✅ Ensures CSS is included
+    optimizeCss: false, // ✅ Ensures CSS is included
   },
 };
 
